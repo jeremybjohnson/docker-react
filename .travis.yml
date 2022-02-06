@@ -1,0 +1,11 @@
+language: generic
+sudo: required
+services:
+  - docker
+before_install: 
+  - docker build -t jeremybjohnson/docker-react -f Dockerfile.dev .
+
+script:
+  # -- --coverage exits test suite
+  - docker run jeremybjohnson/docker-react npm run test -- --coverage
+  
