@@ -7,5 +7,5 @@ before_install:
 
 script:
   # -- --coverage exits test suite
-  - docker run jeremybjohnson/docker-react npm run test -- --coverage
-  
+  - docker run -e CI=true jeremybjohnson/docker-react npm run test
+
